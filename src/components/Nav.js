@@ -1,6 +1,6 @@
 const Nav = () => {
   return (
-    <div>
+    <div className="container-fluid">
       <header>
         <nav className="nav">
           <ul className="nav-list">
