@@ -137,3 +137,24 @@ hr {
   background-color: #6fdc6f;
   color: white;
 }
+
+/* answer */
+
+.answer {
+  border: 1px solid #f0f0f0;
+  border-radius: 0.15rem;
+  text-align: center;
+}
+
+.answer__text {
+  margin: 0.5rem 0;
+}
+
+.answer__button {
+  width: 100%;
+  background-color: #66b3ff;
+  border: none;
+  padding: 0.75rem;
+  color: white;
+  border-radius: 0 0 0.15rem 0.15rem;
+}
