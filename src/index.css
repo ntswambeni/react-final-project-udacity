@@ -13,6 +13,11 @@ code {
 }
 
 .container {
+  width: calc(100vw - 30%);
+  margin: auto;
+}
+
+.container-fluid {
   width: calc(100vw - 60px);
   margin: auto;
 }
@@ -77,6 +82,22 @@ hr {
   background-color: #f0f0f0;
   margin-bottom: 1rem;
   margin-top: -0.15rem;
+}
+
+/* poll-list */
+.poll-list {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 1;
+  padding: 0.5rem;
+  border: 1px solid #f0f0f0;
+}
+
+.poll-list__item {
+  flex: calc((100% / 3) - 1rem);
+  max-width: calc((100% / 3) - 1rem);
+  padding: 0.5rem;
+  list-style: none;
 }
 
 /* Pool */
