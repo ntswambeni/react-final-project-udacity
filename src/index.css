@@ -197,3 +197,53 @@ hr {
   margin-top: 0.5rem;
   padding: 0.5rem;
 }
+
+/* table */
+td,
+th {
+  padding: 0.5rem;
+}
+
+.table {
+  border: 1px solid #dcdcdc;
+  border-collapse: collapse;
+  text-align: left;
+  width: 100%;
+}
+
+.table-header {
+  background-color: #f0f0f0;
+}
+
+.table-header__item {
+  border: 1px solid #dcdcdc;
+}
+
+.table-item {
+  border: 1px solid #dcdcdc;
+}
+
+.table-item-user {
+  display: flex;
+  align-items: center;
+}
+.table-item-user__avatar {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.table-item-user-details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.5rem;
+}
+
+.table-item-user-details__name {
+  font-weight: 600;
+}
+
+.table-item-user-details__username {
+  font-size: small;
+  color: #a9a9a9;
+}
