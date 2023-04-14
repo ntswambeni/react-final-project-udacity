@@ -17,6 +17,8 @@ code {
   margin: auto;
 }
 
+/* Nav */
+
 header {
   display: flex;
   justify-content: space-between;
@@ -73,6 +75,44 @@ hr {
   height: 0.15rem;
   border: none;
   background-color: #f0f0f0;
+  margin-bottom: 1rem;
+  margin-top: -0.15rem;
+}
+
+/* Pool */
+
+.poll {
+  border: 1px solid #f0f0f0;
+  border-radius: 0.15rem;
+  text-align: center;
+}
+
+.poll-details {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 1rem;
+}
+
+.poll-details__owner {
   margin: 0;
-  margin: -0.15rem;
+}
+
+.poll-details_date {
+  font-size: small;
+  color: #a9a9a9;
+}
+
+.poll__button {
+  background-color: inherit;
+  border: 1px solid #6fdc6f;
+  border-radius: 0.15rem;
+  color: #6fdc6f;
+  margin: 0.75rem;
+  padding: 0.4rem;
+  width: calc(100% - 1.5rem);
+  cursor: pointer;
+}
+
+.poll__button:active {
+  background-color: #6fdc6f;
+  color: white;
 }
