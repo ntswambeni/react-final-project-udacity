@@ -79,7 +79,7 @@ header {
 hr {
   height: 0.15rem;
   border: none;
-  background-color: #f0f0f0;
+  background-color: #dcdcdc;
   margin-bottom: 1rem;
   margin-top: -0.15rem;
 }
@@ -90,7 +90,7 @@ hr {
   flex-wrap: wrap;
   row-gap: 1;
   padding: 0.5rem;
-  border: 1px solid #f0f0f0;
+  border: 1px solid #dcdcdc;
 }
 
 .poll-list__item {
@@ -103,13 +103,13 @@ hr {
 /* Pool */
 
 .poll {
-  border: 1px solid #f0f0f0;
+  border: 1px solid #dcdcdc;
   border-radius: 0.15rem;
   text-align: center;
 }
 
 .poll-details {
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid #dcdcdc;
   padding: 1rem;
 }
 
@@ -141,7 +141,7 @@ hr {
 /* answer */
 
 .answer {
-  border: 1px solid #f0f0f0;
+  border: 1px solid #dcdcdc;
   border-radius: 0.15rem;
   text-align: center;
 }
@@ -153,8 +153,47 @@ hr {
 .answer__button {
   width: 100%;
   background-color: #66b3ff;
+  font-family: inherit;
   border: none;
   padding: 0.75rem;
   color: white;
   border-radius: 0 0 0.15rem 0.15rem;
+}
+
+/* login */
+
+.login-page {
+  text-align: center;
+}
+.login-page__cover {
+  width: 500px;
+}
+
+/* form */
+.form__label {
+  font-weight: 600;
+}
+
+.form__input {
+  border: 1px solid #dcdcdc;
+  border-radius: 0.15rem;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.form__input::placeholder {
+  color: #dcdcdc;
+}
+
+.form__button {
+  background-color: #66b3ff;
+  border: none;
+  border-radius: 0.15rem;
+  color: white;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
 }
