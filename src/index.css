@@ -16,3 +16,63 @@ code {
   width: calc(100vw - 60px);
   margin: auto;
 }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 1rem;
+}
+
+.nav-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list__link {
+  list-style: none;
+  font-weight: 500;
+  border-bottom: 0.15rem solid black;
+}
+
+.nav-list__link a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: black;
+}
+
+.nav-list__link--active {
+  border-bottom: 0.15rem solid black;
+}
+
+.user {
+  display: flex;
+  align-items: baseline;
+}
+
+.user__name {
+  font-weight: 600;
+}
+
+.user__avatar {
+  border-radius: 50%;
+  width: 40px;
+}
+
+.user__logout {
+  background-color: inherit;
+  border: none;
+  font-family: inherit;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+hr {
+  height: 0.15rem;
+  border: none;
+  background-color: #f0f0f0;
+  margin: 0;
+  margin: -0.15rem;
+}
