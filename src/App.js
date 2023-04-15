@@ -1,12 +1,16 @@
 import Nav from "./components/Nav";
-import PollList from "./components/PollList";
+import PollAnswer from "./components/PollAnswer";
+
+import Dashboard from "./pages/Dashboard";
+import LeaderboardPage from "./pages/LeaderboardPage";
+import PollPage from "./pages/PollPage";
 
 function App() {
   return (
     <div>
       <Nav />
       <div className="container">
-        <PollList />
+        <Dashboard />
       </div>
     </div>
   );
