@@ -3,7 +3,7 @@ import PollCard from "./PollCard";
 const PollList = () => {
   return (
     <div>
-      <h2>New Question</h2>
+      <h2 className="poll-list-heading">New Question</h2>
       <ul className="poll-list">
         <li className="poll-list__item">
           <PollCard />
