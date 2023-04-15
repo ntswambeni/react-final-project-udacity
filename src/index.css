@@ -12,6 +12,16 @@ code {
     monospace;
 }
 
+.large-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.text-center {
+  text-align: center;
+}
+
 .container {
   width: calc(100vw - 30%);
   margin: auto;
@@ -84,7 +94,39 @@ hr {
   margin-top: -0.15rem;
 }
 
+/* new-poll-page */
+
+.new-poll-page {
+  text-align: center;
+  margin-top: 150px;
+}
+
+.new-poll-page__heading {
+  margin-bottom: 0;
+}
+
+/* poll-page */
+
+.poll-page {
+  text-align: center;
+  margin-top: 150px;
+}
+
+.poll-page-answers {
+  display: flex;
+  justify-content: space-between;
+}
+
+.poll-page-answers__answer {
+  flex: calc(50% - 0.5rem);
+  max-width: calc(50% - 0.5rem);
+}
+
 /* poll-list */
+
+.poll-list-heading {
+  text-align: center;
+}
 .poll-list {
   display: flex;
   flex-wrap: wrap;
@@ -170,6 +212,10 @@ hr {
 }
 
 /* form */
+.form {
+  margin-top: 1rem;
+}
+
 .form__label {
   font-weight: 600;
 }
