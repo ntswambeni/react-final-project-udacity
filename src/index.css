@@ -50,7 +50,6 @@ header {
 .nav-list__link {
   list-style: none;
   font-weight: 500;
-  border-bottom: 0.15rem solid black;
 }
 
 .nav-list__link a {
@@ -60,7 +59,7 @@ header {
   color: black;
 }
 
-.nav-list__link--active {
+.nav-list__link a.active {
   border-bottom: 0.15rem solid black;
 }
 

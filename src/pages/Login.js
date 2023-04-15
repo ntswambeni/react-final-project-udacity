@@ -1,6 +1,6 @@
 const Login = () => {
   return (
-    <div className="login-page">
+    <div className="login-page container">
       <h1>Employee Polls</h1>
       <img
         className="login-page__cover"

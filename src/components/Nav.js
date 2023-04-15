@@ -1,17 +1,25 @@
+import { NavLink, useNavigate } from "react-router-dom";
+
 const Nav = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    navigate("/login");
+  };
+
   return (
     <div className="container-fluid">
       <header>
         <nav className="nav">
           <ul className="nav-list">
             <li className="nav-list__link">
-              <a href="#">Home</a>
+              <NavLink to="/">Home</NavLink>
             </li>
             <li className="nav-list__link">
-              <a href="#">Leaderboard</a>
+              <NavLink to="leaderboard">Leaderboard</NavLink>
             </li>
             <li className="nav-list__link">
-              <a href="#">New</a>
+              <NavLink to="new-poll">New</NavLink>
             </li>
           </ul>
         </nav>
@@ -24,7 +32,9 @@ const Nav = () => {
             />
             <span className="user__name">name</span>
           </div>
-          <button className="user__logout">Logout</button>
+          <button className="user__logout" onClick={handleLogout}>
+            Logout
+          </button>
         </div>
       </header>
       <hr />

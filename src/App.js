@@ -1,18 +1,21 @@
-import Nav from "./components/Nav";
-import PollAnswer from "./components/PollAnswer";
+import { Routes, Route } from "react-router-dom";
 
+import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import LeaderboardPage from "./pages/LeaderboardPage";
-import PollPage from "./pages/PollPage";
+import NewPoll from "./pages/NewPoll";
+import AuthedPage from "./pages/AuthedPage";
 
 function App() {
   return (
-    <div>
-      <Nav />
-      <div className="container">
-        <Dashboard />
-      </div>
-    </div>
+    <Routes>
+      <Route path="/" element={<AuthedPage />}>
+        <Route path="" element={<Dashboard />} />
+        <Route path="leaderboard" element={<LeaderboardPage />} />
+        <Route path="new-poll" element={<NewPoll />} />
+      </Route>
+      <Route path="/login" element={<Login />} />
+    </Routes>
   );
 }
 
