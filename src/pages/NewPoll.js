@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { connect } from "react-redux";
-import { handleSaveQuestion } from "../actions/questions";
 import { useNavigate } from "react-router-dom";
+
+import { handleSaveQuestion } from "../actions/shared";
 
 const NewPoll = (props) => {
   const navigate = useNavigate();

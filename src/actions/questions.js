@@ -9,23 +9,10 @@ export const receiveQuestions = (questions) => ({
   questions,
 });
 
-const addQuestion = (question) => ({
+export const addQuestion = (question) => ({
   type: ADD_QUESTION,
   question,
 });
-
-export const handleSaveQuestion = ({ optionOneText, optionTwoText }) => {
-  return (dispatch, getState) => {
-    const { authedUser } = getState();
-    return saveQuestion({
-      author: authedUser,
-      optionOneText,
-      optionTwoText,
-    }).then((question) => {
-      dispatch(addQuestion(question));
-    });
-  };
-};
 
 const addAnswer = (answer) => ({
   type: ADD_ANSWER,
