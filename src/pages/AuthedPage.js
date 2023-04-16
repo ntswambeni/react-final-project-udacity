@@ -1,15 +1,28 @@
 import { Outlet } from "react-router-dom";
 import Nav from "../components/Nav";
+import { connect } from "react-redux";
+import LoadingBar from "react-redux-loading-bar";
 
-const AuthedPage = () => {
+const AuthedPage = ({ loading }) => {
   return (
     <>
-      <Nav />
-      <div className="container">
-        <Outlet />
-      </div>
+      {!loading && (
+        <>
+          <Nav />
+          <div className="container-fluid">
+            <LoadingBar />
+          </div>
+          <div className="container">
+            <Outlet />
+          </div>
+        </>
+      )}
     </>
   );
 };
 
-export default AuthedPage;
+const mapStateToProps = ({ authedUser }) => ({
+  loading: authedUser === null,
+});
+
+export default connect(mapStateToProps)(AuthedPage);

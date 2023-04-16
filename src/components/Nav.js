@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 import { unsetAuthedUser } from "../actions/authedUser";
+import { LoadingBar } from "react-redux-loading-bar";
 
 const Nav = ({ user, dispatch }) => {
   const navigate = useNavigate();
