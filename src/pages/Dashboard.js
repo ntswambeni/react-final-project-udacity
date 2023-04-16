@@ -4,9 +4,13 @@ import PollList from "../components/PollList";
 const Dashboard = ({ newQuestions, doneQuestions }) => {
   return (
     <>
-      <PollList questionIds={newQuestions} title="New Question" />
+      {newQuestions.length > 0 && (
+        <PollList questionIds={newQuestions} title="New Question" />
+      )}
 
-      <PollList questionIds={doneQuestions} title="Done" />
+      {doneQuestions.length > 0 && (
+        <PollList questionIds={doneQuestions} title="Done" />
+      )}
     </>
   );
 };
