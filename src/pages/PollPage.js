@@ -11,7 +11,14 @@ const withRouter = (Component) => {
   return ComponentWithRouterProp;
 };
 
-const PollPage = ({ question, user }) => {
+const PollPage = ({
+  question,
+  user,
+  voted,
+  votedOptionOne,
+  votedOptionTwo,
+  totalVotes,
+}) => {
   return (
     <div className="poll-page">
       <h2>Poll by {question?.author}</h2>
@@ -27,6 +34,9 @@ const PollPage = ({ question, user }) => {
             questionText={question?.optionOne.text}
             answer="optionOne"
             qid={question?.id}
+            voted={voted}
+            totalVotes={totalVotes}
+            votesAmount={votedOptionOne}
           />
         </div>
         <div className="poll-page-answers__answer">
@@ -34,6 +44,9 @@ const PollPage = ({ question, user }) => {
             questionText={question?.optionTwo.text}
             answer="optionTwo"
             qid={question?.id}
+            voted={voted}
+            totalVotes={totalVotes}
+            votesAmount={votedOptionTwo}
           />
         </div>
       </div>
@@ -41,13 +54,20 @@ const PollPage = ({ question, user }) => {
   );
 };
 
-const mapStatetoProps = ({ questions, users }, { router }) => {
+const mapStatetoProps = ({ questions, users, authedUser }, { router }) => {
   const { id } = router.params;
   const question = questions[id];
+  const voted = users[authedUser]?.answers.hasOwnProperty(id);
+  const votedOptionOne = questions[id]?.optionOne.votes.length;
+  const votedOptionTwo = questions[id]?.optionTwo.votes.length;
+  const totalVotes = votedOptionOne + votedOptionTwo;
   return {
-    id,
     question,
     user: users[question?.author],
+    voted,
+    votedOptionOne,
+    votedOptionTwo,
+    totalVotes,
   };
 };
 

@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+.border-top {
+  border-top: 1px solid #dcdcdc;
+}
+
 button:disabled {
   background-color: #a9a9a9;
   cursor: not-allowed;
