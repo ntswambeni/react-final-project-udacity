@@ -16,7 +16,6 @@ const mapStateToProps = ({ authedUser, questions }) => {
   const doneQuestions = [];
 
   for (let key in questions) {
-    console.log(authedUser);
     if (
       !questions[key].optionOne.votes.includes(authedUser) &&
       !questions[key].optionTwo.votes.includes(authedUser)
