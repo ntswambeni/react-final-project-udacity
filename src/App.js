@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { connect } from "react-redux";
 
@@ -7,15 +6,11 @@ import Dashboard from "./pages/Dashboard";
 import LeaderboardPage from "./pages/LeaderboardPage";
 import NewPoll from "./pages/NewPoll";
 import AuthedPage from "./pages/AuthedPage";
-import { handleInitialData } from "./actions/shared";
 import PollPage from "./pages/PollPage";
 import Protected from "./components/Protected";
 import authedUser from "./reducers/authedUser";
 
 function App(props) {
-  useEffect(() => {
-    props.dispatch(handleInitialData());
-  }, []);
   return (
     <Routes>
       <Route

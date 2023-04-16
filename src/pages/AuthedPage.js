@@ -2,8 +2,14 @@ import { Outlet } from "react-router-dom";
 import Nav from "../components/Nav";
 import { connect } from "react-redux";
 import LoadingBar from "react-redux-loading-bar";
+import { useEffect } from "react";
+import { handleInitialData } from "../actions/shared";
 
-const AuthedPage = ({ loading }) => {
+const AuthedPage = ({ loading, dispatch }) => {
+  useEffect(() => {
+    dispatch(handleInitialData());
+  }, []);
+
   return (
     <>
       {loading ? (
