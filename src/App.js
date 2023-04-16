@@ -1,12 +1,18 @@
+import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
+import { connect } from "react-redux";
 
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import LeaderboardPage from "./pages/LeaderboardPage";
 import NewPoll from "./pages/NewPoll";
 import AuthedPage from "./pages/AuthedPage";
+import { handleInitialData } from "./actions/shared";
 
-function App() {
+function App(props) {
+  useEffect(() => {
+    props.dispatch(handleInitialData());
+  }, []);
   return (
     <Routes>
       <Route path="/" element={<AuthedPage />}>
@@ -19,4 +25,4 @@ function App() {
   );
 }
 
-export default App;
+export default connect()(App);
