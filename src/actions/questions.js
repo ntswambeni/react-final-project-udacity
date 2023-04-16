@@ -27,7 +27,7 @@ export const handleSaveQuestion = ({ optionOneText, optionTwoText }) => {
 
 const addAnswer = (answer) => ({
   type: ADD_ANSWER,
-  userId,
+  answer,
 });
 
 export const handleAddAnswer = (qid, answer) => {
