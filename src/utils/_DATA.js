@@ -156,6 +156,25 @@ function formatQuestion({ optionOneText, optionTwoText, author }) {
   };
 }
 
+export function _login({ username, password }) {
+  return new Promise((resolve, reject) => {
+    if (!username || !password) {
+      return reject("username and password are required");
+    }
+    setTimeout(() => {
+      if (!users.hasOwnProperty(username)) {
+        return reject("invalid credentials!");
+      }
+
+      if (users[username].password !== password) {
+        return reject("invalid credentials!");
+      }
+
+      return resolve(username);
+    }, 1000);
+  });
+}
+
 export function _saveQuestion(question) {
   return new Promise((resolve, reject) => {
     if (

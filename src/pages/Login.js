@@ -1,4 +1,27 @@
-const Login = () => {
+import { connect } from "react-redux";
+import { handleSetAuthedUser } from "../actions/authedUser";
+import { useState } from "react";
+import { Navigate } from "react-router-dom";
+
+const Login = (props) => {
+  const [formfields, setFormfields] = useState({ username: "", password: "" });
+  const { username, password } = formfields;
+  const handleChange = (e) => {
+    setFormfields((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    props.dispatch(handleSetAuthedUser(formfields));
+  };
+
+  if (props.authedUser) {
+    return <Navigate to="/" replace />;
+  }
+
   return (
     <div className="login-page container">
       <h1>Employee Polls</h1>
@@ -10,18 +33,34 @@ const Login = () => {
       <form className="form">
         <label className="form__label">
           User
-          <input className="form__input" placeholder="User" />
+          <input
+            type="text"
+            name="username"
+            className="form__input"
+            placeholder="User"
+            onChange={handleChange}
+          />
         </label>
         <label className="form__label">
           Password
-          <input className="form__input" placeholder="Password" />
+          <input
+            type="password"
+            name="password"
+            className="form__input"
+            placeholder="Password"
+            onChange={handleChange}
+          />
         </label>
-        <button className="form__button" type="submit">
-          Submit
+        <button className="form__button" type="submit" onClick={handleLogin}>
+          Login
         </button>
       </form>
     </div>
   );
 };
 
-export default Login;
+const mapStateToProps = ({ authedUser }) => ({
+  authedUser,
+});
+
+export default connect(mapStateToProps)(Login);
