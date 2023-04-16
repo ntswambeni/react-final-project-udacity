@@ -1,25 +1,15 @@
 import PollCard from "./PollCard";
 
-const PollList = () => {
+const PollList = ({ questionIds, title }) => {
   return (
     <div>
-      <h2 className="poll-list-heading">New Question</h2>
+      <h2 className="poll-list-heading">{title}</h2>
       <ul className="poll-list">
-        <li className="poll-list__item">
-          <PollCard />
-        </li>
-        <li className="poll-list__item">
-          <PollCard />
-        </li>
-        <li className="poll-list__item">
-          <PollCard />
-        </li>
-        <li className="poll-list__item">
-          <PollCard />
-        </li>
-        <li className="poll-list__item">
-          <PollCard />
-        </li>
+        {questionIds.map((questionId) => (
+          <li key={questionId} className="poll-list__item">
+            <PollCard questionId={questionId} />
+          </li>
+        ))}
       </ul>
     </div>
   );

@@ -1,12 +1,33 @@
+import { connect } from "react-redux";
 import PollList from "../components/PollList";
 
-const Dashboard = () => {
+const Dashboard = ({ newQuestions, doneQuestions }) => {
   return (
-    <div>
-      <PollList />
-      <PollList />
-    </div>
+    <>
+      <PollList questionIds={newQuestions} title="New Question" />
+
+      <PollList questionIds={doneQuestions} title="Done" />
+    </>
   );
 };
 
-export default Dashboard;
+const mapStateToProps = ({ authedUser, questions }) => {
+  const newQuestions = [];
+  const doneQuestions = [];
+
+  for (let key in questions) {
+    console.log(authedUser);
+    if (
+      !questions[key].optionOne.votes.includes(authedUser) &&
+      !questions[key].optionTwo.votes.includes(authedUser)
+    ) {
+      newQuestions.push(key);
+    } else {
+      doneQuestions.push(key);
+    }
+  }
+
+  return { newQuestions, doneQuestions };
+};
+
+export default connect(mapStateToProps)(Dashboard);
