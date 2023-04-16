@@ -8,6 +8,7 @@ import LeaderboardPage from "./pages/LeaderboardPage";
 import NewPoll from "./pages/NewPoll";
 import AuthedPage from "./pages/AuthedPage";
 import { handleInitialData } from "./actions/shared";
+import PollPage from "./pages/PollPage";
 
 function App(props) {
   useEffect(() => {
@@ -19,6 +20,7 @@ function App(props) {
         <Route path="" element={<Dashboard />} />
         <Route path="leaderboard" element={<LeaderboardPage />} />
         <Route path="new-poll" element={<NewPoll />} />
+        <Route path="poll/:id" element={<PollPage />} />
       </Route>
       <Route path="/login" element={<Login />} />
     </Routes>

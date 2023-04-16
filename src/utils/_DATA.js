@@ -193,6 +193,10 @@ export function _saveQuestionAnswer({ authedUser, qid, answer }) {
       reject("Please provide authedUser, qid, and answer");
     }
 
+    if (users[authedUser].answers[qid]) {
+      reject("user as already voted in this question");
+    }
+
     setTimeout(() => {
       users = {
         ...users,
@@ -215,7 +219,6 @@ export function _saveQuestionAnswer({ authedUser, qid, answer }) {
           },
         },
       };
-
       resolve(true);
     }, 500);
   });
