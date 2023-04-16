@@ -21,7 +21,7 @@ function App(props) {
       <Route
         path="/"
         element={
-          <Protected isSignedIn={authedUser}>
+          <Protected isSignedIn={props.authedUser}>
             <AuthedPage />
           </Protected>
         }
@@ -29,7 +29,7 @@ function App(props) {
         <Route
           path=""
           element={
-            <Protected isSignedIn={authedUser}>
+            <Protected isSignedIn={props.authedUser}>
               <Dashboard />
             </Protected>
           }
@@ -68,4 +68,4 @@ const mapStateToProps = ({ authedUser }) => ({
   authedUser,
 });
 
-export default connect()(App);
+export default connect(mapStateToProps)(App);

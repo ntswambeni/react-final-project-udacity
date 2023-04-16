@@ -5,11 +5,9 @@ import { addAnswer, addQuestion, receiveQuestions } from "./questions";
 import { addAnswerToUser, addQuestionToUser, receiveUsers } from "./users";
 
 export const handleInitialData = () => {
-  const AUTHED_ID = "sarahedo";
   return (dispatch) => {
     dispatch(showLoading());
     return getInitialData().then(({ users, questions }) => {
-      dispatch(setAuthedUser(AUTHED_ID));
       dispatch(receiveUsers(users));
       dispatch(receiveQuestions(questions));
       dispatch(hideLoading());
