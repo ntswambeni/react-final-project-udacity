@@ -57,7 +57,12 @@ const NewPoll = (props) => {
             onChange={handleChange}
           />
         </label>
-        <button className="form__button" type="submit" onClick={handleSubmit}>
+        <button
+          className="form__button"
+          type="submit"
+          onClick={handleSubmit}
+          disabled={firstOption === "" || secondOption === ""}
+        >
           Submit
         </button>
       </form>

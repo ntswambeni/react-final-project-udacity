@@ -12,6 +12,16 @@ code {
     monospace;
 }
 
+button:disabled {
+  background-color: #a9a9a9;
+  cursor: not-allowed;
+}
+
+button:active:disabled {
+  background-color: #a9a9a9;
+  cursor: not-allowed;
+}
+
 .large-avatar {
   width: 150px;
   height: 150px;
