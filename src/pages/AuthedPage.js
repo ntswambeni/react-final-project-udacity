@@ -6,7 +6,9 @@ import LoadingBar from "react-redux-loading-bar";
 const AuthedPage = ({ loading }) => {
   return (
     <>
-      {!loading && (
+      {loading ? (
+        <LoadingBar />
+      ) : (
         <>
           <Nav />
           <div className="container-fluid">
