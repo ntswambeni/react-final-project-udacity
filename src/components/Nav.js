@@ -1,9 +1,12 @@
+import { connect } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
+import { unsetAuthedUser } from "../actions/authedUser";
 
-const Nav = () => {
+const Nav = ({ user, dispatch }) => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
+    dispatch(unsetAuthedUser());
     navigate("/login");
   };
 
@@ -27,10 +30,10 @@ const Nav = () => {
           <div>
             <img
               className="user__avatar"
-              src="https://images.freeimages.com/images/large-previews/971/basic-shape-avatar-1632968.jpg"
+              src={user?.avatarURL}
               alt="user avatar"
             />
-            <span className="user__name">name</span>
+            <span className="user__name">{user?.id}</span>
           </div>
           <button className="user__logout" onClick={handleLogout}>
             Logout
@@ -42,4 +45,7 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+const mapStateToProps = ({ authedUser, users }) => ({
+  user: users[authedUser],
+});
+export default connect(mapStateToProps)(Nav);
