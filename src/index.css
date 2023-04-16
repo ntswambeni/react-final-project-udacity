@@ -243,6 +243,10 @@ hr {
   padding: 0.5rem;
 }
 
+.form__button:active {
+  background-color: #3a96f2;
+}
+
 /* table */
 td,
 th {
