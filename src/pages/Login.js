@@ -51,7 +51,12 @@ const Login = (props) => {
             onChange={handleChange}
           />
         </label>
-        <button className="form__button" type="submit" onClick={handleLogin}>
+        <button
+          className="form__button"
+          type="submit"
+          onClick={handleLogin}
+          disabled={username === "" || password === ""}
+        >
           Login
         </button>
       </form>
