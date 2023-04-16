@@ -216,6 +216,9 @@ hr {
   cursor: pointer;
 }
 
+.answer__button:active {
+  background-color: #3a96f2;
+}
 /* login */
 
 .login-page {
