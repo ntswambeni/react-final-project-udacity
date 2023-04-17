@@ -1,14 +1,28 @@
 import { connect } from "react-redux";
 import PollList from "../components/PollList";
+import { useState } from "react";
 
 const Dashboard = ({ newQuestions, doneQuestions }) => {
+  const [questionsDisplayed, setQuestionsDisplayed] = useState("new");
   return (
     <>
-      {newQuestions.length > 0 && (
+      <label for="questionsDisplayed" style={{ fontWeight: 600 }}>
+        Choose pools to displays{" "}
+      </label>
+      <select
+        id="questionsDisplayed"
+        name="questionsDisplayed"
+        value={questionsDisplayed}
+        onChange={(e) => {
+          setQuestionsDisplayed(e.target.value);
+        }}
+      >
+        <option value="new">answered </option>
+        <option value="done">unanswered </option>
+      </select>
+      {questionsDisplayed === "new" ? (
         <PollList questionIds={newQuestions} title="New Question" />
-      )}
-
-      {doneQuestions.length > 0 && (
+      ) : (
         <PollList questionIds={doneQuestions} title="Done" />
       )}
     </>
