@@ -19,7 +19,7 @@ const Nav = ({ user, dispatch }) => {
               <NavLink to="leaderboard">Leaderboard</NavLink>
             </li>
             <li className="nav-list__link">
-              <NavLink to="new-poll">New</NavLink>
+              <NavLink to="add">New</NavLink>
             </li>
           </ul>
         </nav>

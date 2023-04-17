@@ -39,7 +39,7 @@ function App(props) {
           }
         />
         <Route
-          path="new-poll"
+          path="add"
           element={
             <Protected isSignedIn={authedUser}>
               <NewPoll />
