@@ -9,6 +9,7 @@ import AuthedPage from "./pages/AuthedPage";
 import PollPage from "./pages/PollPage";
 import Protected from "./components/Protected";
 import authedUser from "./reducers/authedUser";
+import NotFound from "./pages/NotFound";
 
 function App(props) {
   return (
@@ -55,6 +56,7 @@ function App(props) {
         />
       </Route>
       <Route path="/login" element={<Login />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
