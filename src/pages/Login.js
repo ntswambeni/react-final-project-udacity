@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { handleSetAuthedUser } from "../actions/authedUser";
 import { useState } from "react";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 
 const Login = (props) => {
   const [formfields, setFormfields] = useState({ username: "", password: "" });
@@ -35,6 +35,7 @@ const Login = (props) => {
       <img
         className="login-page__cover"
         src="https://www.applauz.me/hubfs/image%20%2822%29.png"
+        alt="Login page cover"
       ></img>
       <h2>Log In</h2>
       <form className="form">
