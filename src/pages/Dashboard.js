@@ -29,7 +29,8 @@ const mapStateToProps = ({ authedUser, questions }) => {
       doneQuestions.push(key);
     }
   }
-
+  newQuestions.sort((a, b) => questions[b].timestamp - questions[a].timestamp);
+  doneQuestions.sort((a, b) => questions[b].timestamp - questions[a].timestamp);
   return { newQuestions, doneQuestions };
 };
 
