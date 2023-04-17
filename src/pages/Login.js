@@ -46,6 +46,7 @@ const Login = (props) => {
             name="username"
             className="form__input"
             placeholder="User"
+            data-testid="username"
             onChange={handleChange}
           />
         </label>
@@ -56,6 +57,7 @@ const Login = (props) => {
             name="password"
             className="form__input"
             placeholder="Password"
+            data-testid="password"
             onChange={handleChange}
           />
         </label>
