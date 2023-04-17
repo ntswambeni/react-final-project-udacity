@@ -48,6 +48,7 @@ const Login = (props) => {
             placeholder="User"
             data-testid="username"
             onChange={handleChange}
+            value={username}
           />
         </label>
         <label className="form__label">
@@ -59,6 +60,7 @@ const Login = (props) => {
             placeholder="Password"
             data-testid="password"
             onChange={handleChange}
+            value={password}
           />
         </label>
         <button
@@ -66,6 +68,7 @@ const Login = (props) => {
           type="submit"
           onClick={handleLogin}
           disabled={username === "" || password === ""}
+          data-testid="submit"
         >
           Login
         </button>
