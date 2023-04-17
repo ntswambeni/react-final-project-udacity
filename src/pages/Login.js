@@ -1,11 +1,14 @@
 import { connect } from "react-redux";
 import { handleSetAuthedUser } from "../actions/authedUser";
 import { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 
 const Login = (props) => {
   const [formfields, setFormfields] = useState({ username: "", password: "" });
   const { username, password } = formfields;
+
+  const location = useLocation();
+
   const handleChange = (e) => {
     setFormfields((prevState) => ({
       ...prevState,
@@ -19,6 +22,9 @@ const Login = (props) => {
   };
 
   if (props.authedUser) {
+    if (location.state) {
+      return <Navigate to={location.state.from} replace />;
+    }
     return <Navigate to="/" replace />;
   }
 
