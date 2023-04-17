@@ -31,7 +31,7 @@ const PollPage = ({
       <div className="poll-page-answers">
         <div className="poll-page-answers__answer">
           <PollAnswer
-            questionText={question?.optionOne.text}
+            question={question?.optionOne}
             answer="optionOne"
             qid={question?.id}
             voted={voted}
@@ -41,7 +41,7 @@ const PollPage = ({
         </div>
         <div className="poll-page-answers__answer">
           <PollAnswer
-            questionText={question?.optionTwo.text}
+            question={question?.optionTwo}
             answer="optionTwo"
             qid={question?.id}
             voted={voted}
@@ -55,7 +55,7 @@ const PollPage = ({
 };
 
 const mapStatetoProps = ({ questions, users, authedUser }, { router }) => {
-  const { id } = router.params;
+  const { question_id: id } = router.params;
   const question = questions[id];
   const voted = users[authedUser]?.answers.hasOwnProperty(id);
   const votedOptionOne = questions[id]?.optionOne.votes.length;

@@ -7,7 +7,7 @@ const PollCard = ({ author, timestamp, questionId }) => {
   const navigate = useNavigate();
 
   const handleShowQuestion = () => {
-    navigate(`/poll/${questionId}`);
+    navigate(`/questions/${questionId}`);
   };
 
   return (
