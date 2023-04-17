@@ -27,6 +27,7 @@ const NewPoll = (props) => {
         optionTwoText: secondOption,
       })
     );
+    setFormfields({ firstOption: "", secondOption: "" });
     navigate("/");
   };
 

@@ -19,6 +19,7 @@ const Login = (props) => {
   const handleLogin = (e) => {
     e.preventDefault();
     props.dispatch(handleSetAuthedUser(formfields));
+    setFormfields({ username: "", password: "" });
   };
 
   if (props.authedUser) {
