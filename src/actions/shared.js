@@ -1,6 +1,5 @@
 import { hideLoading, showLoading } from "react-redux-loading-bar";
 import { getInitialData, saveQuestion, saveQuestionAnswer } from "../utils/api";
-import { setAuthedUser } from "./authedUser";
 import { addAnswer, addQuestion, receiveQuestions } from "./questions";
 import { addAnswerToUser, addQuestionToUser, receiveUsers } from "./users";
 
