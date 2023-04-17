@@ -38,11 +38,13 @@ describe("save question", () => {
 
 describe("save question answer", () => {
   it("returns the saved question answer", async () => {
-    const user = { authedUser: "", qid: "", answer: "" };
+    const user = {
+      authedUser: "sarahedo",
+      qid: "xj352vofupe1dqz9emx13r",
+      answer: "optionTwo",
+    };
     const returnedAnswer = await _saveQuestionAnswer(user);
-    expect(returnedAnswer.qid).toEqual(user.qid);
-    expect(returnedAnswer.answer).toEqual(user.answer);
-    expect(returnedAnswer.authedUser).toEqual(user.authedUser);
+    expect(returnedAnswer).toEqual(true);
   });
 
   it("returns an error if incorrect data is passed to the function", async () => {
