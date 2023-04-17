@@ -45,6 +45,7 @@ const NewPoll = (props) => {
             value={firstOption}
             placeholder="Option one"
             onChange={handleChange}
+            data-testid="firstOption"
           />
         </label>
         <label className="form__label">
@@ -56,6 +57,7 @@ const NewPoll = (props) => {
             value={secondOption}
             placeholder="Option two"
             onChange={handleChange}
+            data-testid="secondOption"
           />
         </label>
         <button
@@ -63,6 +65,7 @@ const NewPoll = (props) => {
           type="submit"
           onClick={handleSubmit}
           disabled={firstOption === "" || secondOption === ""}
+          data-testid="save-button"
         >
           Submit
         </button>
