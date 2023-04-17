@@ -2,8 +2,9 @@ import { connect } from "react-redux";
 import { handleAddAnswer } from "../actions/shared";
 
 const PollAnswer = ({
+  authedUser,
   qid,
-  questionText,
+  question,
   answer,
   dispatch,
   voted,
@@ -15,8 +16,8 @@ const PollAnswer = ({
   };
 
   return (
-    <div className="answer">
-      <p className="answer__text">{questionText}</p>
+    <div className={`answer ${question.votes.includes(authedUser) && "voted"}`}>
+      <p className="answer__text">{question?.text}</p>
       {voted ? (
         <p className="answer__text border-top">{`${votesAmount} / (${
           Math.round((votesAmount / totalVotes) * 100 * 100) / 100
@@ -31,12 +32,13 @@ const PollAnswer = ({
 };
 
 const mapStatetoProps = (
-  {},
-  { answer, questionText, qid, voted, votesAmount, totalVotes }
+  { authedUser },
+  { answer, question, qid, voted, votesAmount, totalVotes }
 ) => {
   return {
+    authedUser,
     answer,
-    questionText,
+    question,
     qid,
     voted,
     votesAmount,
