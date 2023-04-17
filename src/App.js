@@ -54,9 +54,16 @@ function App(props) {
             </Protected>
           }
         />
+        <Route
+          path="*"
+          element={
+            <Protected isSignedIn={authedUser}>
+              <NotFound />
+            </Protected>
+          }
+        />
       </Route>
       <Route path="/login" element={<Login />} />
-      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
