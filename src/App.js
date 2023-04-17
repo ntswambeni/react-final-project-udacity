@@ -47,7 +47,7 @@ function App(props) {
           }
         />
         <Route
-          path="poll/:id"
+          path="questions/:question_id"
           element={
             <Protected isSignedIn={authedUser}>
               <PollPage />
