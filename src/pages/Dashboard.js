@@ -6,7 +6,7 @@ const Dashboard = ({ newQuestions, doneQuestions }) => {
   const [questionsDisplayed, setQuestionsDisplayed] = useState("new");
   return (
     <>
-      <label for="questionsDisplayed" style={{ fontWeight: 600 }}>
+      <label htmlFor="questionsDisplayed" style={{ fontWeight: 600 }}>
         Choose pools to displays{" "}
       </label>
       <select
