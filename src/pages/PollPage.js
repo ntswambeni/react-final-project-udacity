@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import PollAnswer from "../components/PollAnswer";
 import { connect } from "react-redux";
+import NotFound from "./NotFound";
 
 const withRouter = (Component) => {
   const ComponentWithRouterProp = (props) => {
@@ -19,6 +20,10 @@ const PollPage = ({
   votedOptionTwo,
   totalVotes,
 }) => {
+  if (!question) {
+    return <NotFound />;
+  }
+
   return (
     <div className="poll-page">
       <h2>Poll by {question?.author}</h2>
