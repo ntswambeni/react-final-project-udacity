@@ -1,4 +1,6 @@
 import thunk from "redux-thunk";
 import logger from "./logger";
 
-export default [thunk, logger];
+const middleware = [thunk, logger];
+
+export default middleware;
