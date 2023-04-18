@@ -5,7 +5,7 @@ import LoadingBar from "react-redux-loading-bar";
 import { useEffect } from "react";
 import { handleInitialData } from "../actions/shared";
 
-const AuthedPage = ({ loading, dispatch }) => {
+const AuthedPage = ({ loading, dispatch, loadingBar }) => {
   useEffect(() => {
     dispatch(handleInitialData());
   }, []);
@@ -17,20 +17,24 @@ const AuthedPage = ({ loading, dispatch }) => {
       ) : (
         <>
           <Nav />
-          <div className="container-fluid">
-            <LoadingBar />
-          </div>
-          <div className="container">
-            <Outlet />
-          </div>
+          {loadingBar.default ? (
+            <div className="container-fluid">
+              <LoadingBar />
+            </div>
+          ) : (
+            <div className="container">
+              <Outlet />
+            </div>
+          )}
         </>
       )}
     </>
   );
 };
 
-const mapStateToProps = ({ authedUser }) => ({
+const mapStateToProps = ({ authedUser, loadingBar }) => ({
   loading: authedUser === null,
+  loadingBar,
 });
 
 export default connect(mapStateToProps)(AuthedPage);
